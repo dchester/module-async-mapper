@@ -75,10 +75,11 @@ fs.exists('/etc/passwd', function(exists) {
 
 > `promise`
 
-A promise is an instance of a Promise from [ES6 promises]() / [bluebird]() / etc.
+A promise is an instance of a Promise from [ES6 promises](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-constructor) / [bluebird](https://github.com/petkaantonov/bluebird) / etc.
 
 ```javascript
-File.read('/etc/passwd').then(function(contents) { console.log(contents) });
+File.read('/etc/passwd')
+  .then(function(contents) { console.log(contents) });
 ```
 
 #### Generator Function
