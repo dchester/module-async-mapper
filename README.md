@@ -28,7 +28,7 @@ And another example: The `mkdirp` module exports a function that accepts a stand
 
 ```javascript
 var mapper = require('module-async-map');
-var jsdom = require('mkdirp');
+var mkdirp = require('mkdirp');
 var map = mapper.map(mkdirp, { '$': '+standard' });
 
 // {
