@@ -13,6 +13,11 @@ suite('util', function() {
     assert.equal(util.guess_callback_scheme(fn), 'standard');
   });
 
+  test('guess callback arity for standard callback sending error', function() {
+    var fn = function(cb) { if (0) { cb('error!') } else { cb(new Error()) } };
+    assert.equal(util.guess_callback_scheme(fn), 'standard');
+  });
+
   if (util.engine_supports_generators()) {
     test('we can detect a generator function', function() {
       eval("var gfn = function*() {}");

@@ -124,7 +124,7 @@
   "$.ReadStream.super_.super_.Writable.prototype.write": "standard",
   "$.ReadStream.super_.super_.Writable.prototype.cork": "sync",
   "$.ReadStream.super_.super_.Writable.prototype.uncork": "sync",
-  "$.ReadStream.super_.super_.Writable.prototype._write": "simple",
+  "$.ReadStream.super_.super_.Writable.prototype._write": "standard",
   "$.ReadStream.super_.super_.Writable.prototype.end": "standard",
   "$.ReadStream.super_.super_.Transform.prototype.push": "sync",
   "$.ReadStream.super_.super_.Transform.prototype._transform": "standard",
@@ -137,4 +137,3 @@
   "$.SyncWriteStream.prototype.end": "sync",
   "$.SyncWriteStream.prototype.destroy": "sync"
 }
-
