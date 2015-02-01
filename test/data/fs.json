@@ -56,7 +56,7 @@
   "$.utimesSync": "sync",
   "$.futimes": "standard",
   "$.futimesSync": "sync",
-  "$.writeFile": "simple",
+  "$.writeFile": "standard",
   "$.writeFileSync": "sync",
   "$.appendFile": "standard",
   "$.appendFileSync": "sync",
