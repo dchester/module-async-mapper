@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "david@fmail.co.uk",
   "scripts": {
-    "test": "mocha --harmony -u tdd test"
+    "test": "mocha --harmony -u tdd test && jscs lib && jshint lib"
   },
   "dependencies": {
     "callsite": "^1.0.0",
@@ -12,6 +12,8 @@
     "package-path": "0.0.1"
   },
   "devDependencies": {
+    "jscs": "1.11.0",
+    "jshint": "2.6.0",
     "mocha": "2.1.0",
     "pg": "4.2.0",
     "redis": "0.12.1",
