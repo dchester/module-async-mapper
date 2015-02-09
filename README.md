@@ -1,15 +1,15 @@
-# module-async-map
+# module-async-mapper
 
 Discover and specify module methods' continuation schemes (callbacks vs promises vs generator functions, etc)
 
-#### mapper.discover(module, [hints])
+#### mapper.map(module[, hints, options])
 
 Traverses the module and returns a [JSONPath](https://github.com/dchester/jsonpath) style map of the given module's methods, along with a heuristic best guess at their continuation scheme, accepting hints to inform guesses.
 
 ```javascript
-var mapper = require('module-async-map');
+var mapper = require('module-async-mapper');
 var fs = require('fs');
-var map = mapper.discover(fs);
+var map = mapper.map(fs);
 
 // {
 //   '$.readFile': 'standard',
@@ -37,11 +37,28 @@ var map = mapper.map(mkdirp, { '$': '+standard' });
 // }
 ```
 
-If `module` is a string, it will be resolved as `require` would do, and any hints in `.asyncmap.json` in the module's source root will be applied with `hints` merged on top.
+If `module` is a string, it will be resolved as `require` would do, and any hints in `.asyncmap.json` in the module's source root will be applied with `hints` merged on top, as well as any local hints from this package.
 
-#### mapper.map(module, hints)
+Takes the following options:
 
-Returns a JSONPath style map of the given module's methods based on hints provided.  Hints are in the form of an object with JSONPath keys (which may be queries) pointing to continuation scheme identifiers.  Unlike `discover`, this method will not traverse the entire object -- only values with keys that match keys in hints.
+- `traverseAll` - Traverse the whole object rather than just the parts that match keys in hints; defaults to `true`
+- `loadModuleHints` - Load any hints from `.asyncmap` files in module source root; defaults to `true`
+- `loadLocalHints` - Load any hints from `hints` in this here module; defaults to `true`
+
+#### mapper.scheme(fn)
+
+Given a function returns a continuation scheme identifier based on a heuristic best guess.  For example, detect a plain old synchronous function:
+
+```javascript
+var scheme = mapper.scheme(function(a, b) { return a + b });
+// "sync"
+```
+Or detect a function that accepts a standard callback:
+
+```
+var scheme = mapper.scheme(function(a, b, callback) { return callback(null, a + b) });
+// "standard"
+```
 
 ## Continuation Schemes
 

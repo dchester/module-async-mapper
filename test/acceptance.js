@@ -31,4 +31,9 @@ suite('acceptance', function() {
     assert.deepEqual(map, require('./data/pg.json'));
   });
 
+  test('mkdirp module', function() {
+    var map = mm.map('mkdirp');
+    assert.deepEqual(map, require('./data/mkdirp.json'));
+  });
+
 });

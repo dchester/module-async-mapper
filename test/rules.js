@@ -5,12 +5,12 @@ suite('module-rules', function() {
 
   test('we pick up .asyncmap.json files', function() {
     var module = mapper.loadModule('./lib/echo');
-    assert.deepEqual(module.rules, { 'say': '+standard' });
+    assert.deepEqual(module.hints, { 'say': '+standard' });
   });
 
   test('loading module with no config file goes okay', function() {
     var module = mapper.loadModule('./lib/calc');
-    assert.deepEqual(module.rules, undefined);
+    assert.deepEqual(module.hints, undefined);
   });
 
 });

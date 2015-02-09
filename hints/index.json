@@ -1,0 +1,17 @@
+{
+  "mkdirp": {
+    "$": "+standard"
+  },
+  "mongodb": {
+    "MongoClient.*": "standard",
+    "Collection.prototype.*": "standard",
+    "Cursor.prototype.*": "standard"
+  },
+  "jsdom": {
+    "env": "+standard"
+  },
+  "superagent": {
+    "$": "+simple",
+    "Request.prototype.end": "+simple"
+  }
+}
