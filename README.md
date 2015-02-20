@@ -55,7 +55,7 @@ var scheme = mapper.scheme(function(a, b) { return a + b });
 ```
 Or detect a function that accepts a standard callback:
 
-```
+```javascript
 var scheme = mapper.scheme(function(a, b, callback) { return callback(null, a + b) });
 // "standard"
 ```
