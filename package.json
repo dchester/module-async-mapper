@@ -1,6 +1,6 @@
 {
   "name": "module-async-mapper",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "david@fmail.co.uk",
   "scripts": {
     "test": "mocha --harmony -u tdd test && jscs lib && jshint lib"
