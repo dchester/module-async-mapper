@@ -1,5 +1,7 @@
 {
   "$.Stats": "sync",
+  "$.access": "standard",
+  "$.accessSync": "sync",
   "$.exists": "simple",
   "$.existsSync": "sync",
   "$.readFile": "standard",
@@ -107,6 +109,7 @@
   "$.WriteStream.prototype.write": "standard",
   "$.WriteStream.prototype.cork": "sync",
   "$.WriteStream.prototype.uncork": "sync",
+  "$.WriteStream.prototype.setDefaultEncoding": "sync",
   "$.WriteStream.prototype.addListener": "sync",
   "$.SyncWriteStream.prototype.write": "sync",
   "$.SyncWriteStream.prototype.end": "sync",
