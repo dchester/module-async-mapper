@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dchester/module-async-mapper.png?branch=master)](https://travis-ci.org/dchester/module-async-mapper)
+
 # module-async-mapper
 
 Discover and specify module methods' continuation schemes (callbacks vs promises vs generator functions, etc)
